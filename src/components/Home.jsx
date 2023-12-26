@@ -25,7 +25,7 @@ const Home = () => {
         }
         await addDoc(collectionRef, payload)
         setMessage('Now You will be redirected. Happy shopping!')
-        window.location.href = 'https://amzn.to/3tvjLas'
+        window.location.href = 'https://amzn.to/489Ow3H'
     }
   };
 
