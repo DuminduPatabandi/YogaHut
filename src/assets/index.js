@@ -1,6 +1,8 @@
-import logo from "./logodoit.png";
+import logoyoga from "./logoyoga.svg";
+import yogamain from "./yogamain.svg";
 
 
 export {
-logo
+logoyoga,
+yogamain
 };

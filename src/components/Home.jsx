@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { logo } from "../assets";
+import { logoyoga, yogamain } from "../assets";
 import { EnvelopeIcon, UserIcon } from "@heroicons/react/24/outline";
 import { collection, addDoc } from 'firebase/firestore'
 import db from '../firebase'
@@ -32,17 +32,27 @@ const Home = () => {
   return (
     <>
       <div className="container items-center px-6 mx-auto">
-        <div className="flex  items-center justify-center">
-          <form onSubmit={handleSubmit} className="w-full max-w-md">
             <div className="flex flex-col  justify-center items-center ">
               <img
-                src={logo}
+                src={yogamain}
                 alt="site-logo"
-                className="w-[8rem] h-[8rem] logo object-contain mt-32  sm:mt-26 md:mt-32"
+                className="w-[41rem] rounded-[2.4rem] object-contain mt-20  sm:mt-20 md:mt-20"
               />
             </div>
-            <h1 className=" text-2xl font-poppins my-6 text-center font-semibold text-black capitalize sm:text-3xl ">
-              Just Do It <span className="text-[#ff58e7]">{myName}</span>
+            <div className="flex flex-col  justify-center items-center ">
+              <img
+                src={logoyoga}
+                alt="site-logo"
+                className="w-[8rem] h-[8rem] logo object-contain -mt-16 z-10 "
+              />
+            </div>
+        <div className="flex  items-center justify-center">
+          <form onSubmit={handleSubmit} className="w-full max-w-md">
+            <p className=" text-sm font-poppins mt-6 text-center font-light text-[#e8b48c] capitalize sm:text-sm ">
+              WELCOME TO
+            </p>
+            <h1 className=" text-2xl font-poppins text-center font-semibold text-[#111111] capitalize sm:text-3xl ">
+              YOGA HUT <span className="text-[#e8b48c]">{myName}</span>
             </h1>
             <div class="relative flex items-center mt-8">
               <span className="absolute">
@@ -81,15 +91,15 @@ const Home = () => {
             <div className="mt-6">
               <button 
                 
-                className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#ff58e7] rounded-lg hover:bg-[#0a0a23] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#e8b48c] rounded-lg hover:bg-[#0a0a23] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                 type="submit"
               >
-                Lets Do It
+                Show me the way
               </button>
             </div>
-            <h2 className=" text-base font-poppins my-6 text-center font-semibold text-black ">
+            <h2 className=" text-base font-poppins my-6 text-center font-semibold text-[#111111] ">
               Don't worry. We Don't spam You{" "}
-              <span className="text-[#ff58e7]">{myName}</span>
+              <span className="text-[#e8b48c]">{myName}</span>
             </h2>
             <h2 className=" text-sm font-poppins my-6 text-center font-semibold text-[#00e59b] ">
               {message}
