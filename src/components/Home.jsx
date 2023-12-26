@@ -7,18 +7,25 @@ import db from '../firebase'
 const Home = () => {
   const [myName, setMyName] = useState("");
   const [mail, setMail] = useState("");
+  const [message, setMessage] = useState("")
+
+  const isValidEmail = (email) => {
+    // Simple email validation using regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(mail){
+    if(isValidEmail(mail)){
         const collectionRef = collection(db, 'emails')
         const payload = {
             name: myName,
             mail: mail,
         }
         await addDoc(collectionRef, payload)
-        setMyName('')
-        setMail('')
+        setMessage('Now You will be redirected. Happy shopping!')
+        window.location.href = 'https://www.google.com'
     }
   };
 
@@ -72,7 +79,8 @@ const Home = () => {
               />
             </div>
             <div className="mt-6">
-              <button
+              <button 
+                
                 className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#ff58e7] rounded-lg hover:bg-[#0a0a23] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                 type="submit"
               >
@@ -82,6 +90,9 @@ const Home = () => {
             <h2 className=" text-base font-poppins my-6 text-center font-semibold text-black ">
               Don't worry. We Don't spam You{" "}
               <span className="text-[#ff58e7]">{myName}</span>
+            </h2>
+            <h2 className=" text-sm font-poppins my-6 text-center font-semibold text-[#00e59b] ">
+              {message}
             </h2>
           </form>
         </div>
