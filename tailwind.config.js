@@ -23,5 +23,9 @@ module.exports = {
       xl: "1700px",
     },
   },
-  plugins: [require('preline/plugin')],
+  plugins: [
+    require('preline/plugin'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+  
 };

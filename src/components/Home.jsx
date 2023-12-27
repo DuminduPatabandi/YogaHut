@@ -63,10 +63,11 @@ const Home = () => {
               </span>
               <input
                 type="text"
+                id="name"
                 name="username"
                 value={myName}
                 required
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11  focus:border-[#4d8899]  focus:ring-[#4d8899] focus:outline-none focus:ring focus:ring-opacity-40"
                 onChange={(e) => setMyName(e.target.value)}
                 placeholder="Your Name"
               />
@@ -83,7 +84,7 @@ const Home = () => {
                 name="username"
                 value={mail}
                 required
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11  focus:border-[#4d8899]  focus:ring-[#4d8899] focus:outline-none focus:ring focus:ring-opacity-40"
                 onChange={(e) => setMail(e.target.value)}
                 placeholder="Your Email (babara@gmail.com)"
               />
@@ -104,6 +105,9 @@ const Home = () => {
             <h2 className=" text-sm font-poppins my-6 text-center font-semibold text-[#00e59b] ">
               {message}
             </h2>
+            <h1 className=" text-4xl font-poppins mt-20 text-center font-medium text-[#e8b48c]">
+              Sign Up to <span className="text-[#4d8899] font-semibold ">Win $200</span> Coupon
+            </h1>
           </form>
         </div>
       </div>
